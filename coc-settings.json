@@ -1,0 +1,15 @@
+{
+    "npm.binPath": "/home/xtayex/.nvm/versions/node/v12.18.0/bin/npm",
+    "languageserver": {
+        "racket": {
+            "command": "racket",
+            "args": [
+                "--lib",
+                "racket-langserver"
+            ],
+            "filetypes": ["scheme", "rkt", "scm"],
+            "trace.server": "verbose"
+        }
+    },
+    "Lua.telemetry.enable": true
+}
