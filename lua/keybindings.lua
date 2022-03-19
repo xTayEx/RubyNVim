@@ -4,7 +4,6 @@ vim.g.maplocalleader = ","
 local map = vim.api.nvim_set_keymap
 local opt = {noremap = true, silent = true}
 
-map("n", "<F3>", ":NERDTreeToggle", opt)
 map("n", "<leader>w", ":w<CR>", opt)
 map("n", "<leader>q", ":q<CR>", opt)
 map("n", "<leader>ve", ":e ~/.config/nvim/init.lua<cr>", opt)
@@ -23,3 +22,4 @@ map("n", "<leader>e", ":NvimTreeToggle<cr>", opt)
 map("n", "<leader>gb", ":BufferLinePick<cr>", opt)
 
 map("n", "<leader>gg", ":lua _lazygit_toggle()<cr>", opt)
+map("n", "<leader>gt", ":lua _hop_toggle()<cr>", opt)

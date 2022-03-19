@@ -18,7 +18,10 @@ require('toggleterm').setup {
 local lazygit = Terminal:new({
     cmd = "lazygit",
     dir = '.',
-    direction = "tab",
+    direction = "float",
+    float_opts = {
+        border = "curved",
+    }
 }) 
 
 function _lazygit_toggle()
