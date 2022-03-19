@@ -1,3 +1,5 @@
+local Terminal = require('toggleterm.terminal').Terminal
+
 require('toggleterm').setup {
     function (term)
         if term.direction == "horizontal" then
@@ -13,7 +15,6 @@ require('toggleterm').setup {
 
 -- lazygit
 
-local Terminal = require('toggleterm.terminal').Terminal
 local lazygit = Terminal:new({
     cmd = "lazygit",
     dir = '.',
@@ -22,4 +23,14 @@ local lazygit = Terminal:new({
 
 function _lazygit_toggle()
     lazygit:toggle()
+end
+
+-- htop
+local htop = Terminal:new ({
+    cmd = "htop",
+    direction = "tab"
+})
+
+function _hop_toggle()
+    htop:toggle()
 end
