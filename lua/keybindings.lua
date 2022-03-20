@@ -21,5 +21,3 @@ map("n", "<C-L>", "<C-W>l", opt)
 map("n", "<leader>e", ":NvimTreeToggle<cr>", opt)
 map("n", "<leader>gb", ":BufferLinePick<cr>", opt)
 
-map("n", "<leader>gg", ":lua _lazygit_toggle()<cr>", opt)
-map("n", "<leader>gt", ":lua _hop_toggle()<cr>", opt)

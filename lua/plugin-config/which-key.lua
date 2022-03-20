@@ -16,20 +16,35 @@ whichkey.setup {
             windows = true, -- default bindings on <c-w>
             nav = true, -- misc bindings to work with windows
             z = true, -- bindings for folds, spelling and others prefixed with z
-            g = true, -- bindings for prefixed with g
         }
     }
 }
 
 whichkey.register({
     ["<leader>"] = {
+        g = {
+            name = "toggleterm",
+            g = {":lua _lazygit_toggle()<cr>", "Open lazygit"},
+            t = {":lua _htop_toggle()<cr>", "Open htop"},
+            s = {":lua _termscp_toggle()<cr>", "Open termscp for transfer file"}
+        }
+    }
+})
+
+whichkey.register({
+    ["<leader>"] = {
         f = {
-            name = "telescope",
+            name = "Telescope",
             f = {":Telescope find_files<cr>", "Find project files"},
             r = {":Telescope oldfiles<cr>", "Find recent files"},
             o = {":Telescope file_browser<cr>", "Open file browser"},
             g = {":Telescope live_grep<cr>", "Live grep"},
-            h = {":Telescope help_tags<cr>", "Show help tags"}
+            h = {":Telescope help_tags<cr>", "Search help tags"},
+            b = {":Telescope buffers<cr>", "Search buffers"},
+            m = {":Telescope man_pages<cr>", "Search man pages"},
+            p = {":Telescope planets<cr>", "Planet!"},
+            q = {":Telescope quickfix<cr>", "Quickfix"},
+            s = {":Telescope symbols<cr>", "Search symbols(emoji, latex, kaomoji...etc.)"}
         }
     }
 })

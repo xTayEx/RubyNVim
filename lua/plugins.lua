@@ -59,5 +59,6 @@ return require('packer').startup(function()
     use { "nvim-telescope/telescope-fzf-native.nvim", run = "make" }
     use { "fannheyward/telescope-coc.nvim" }
     use { "folke/which-key.nvim" }
+    use { "nvim-telescope/telescope-symbols.nvim" }
 end)
 

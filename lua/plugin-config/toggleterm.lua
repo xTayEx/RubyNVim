@@ -34,6 +34,23 @@ local htop = Terminal:new ({
     direction = "tab"
 })
 
-function _hop_toggle()
+function _htop_toggle()
     htop:toggle()
 end
+
+local termscp = Terminal:new({
+    cmd = "termscp",
+    direction = "tab"
+})
+
+function _termscp_toggle()
+    termscp:toggle()
+end
+
+local map = vim.api.nvim_set_keymap
+local opt = {noremap = true, silent = true}
+-- <leader>g prefix for toggleterm
+map("n", "<leader>gg", ":lua _lazygit_toggle()<cr>", opt)
+map("n", "<leader>gt", ":lua _htop_toggle()<cr>", opt)
+map("n", "<leader>gs", ":lua _termscp_toggle()<cr>", opt)
+
