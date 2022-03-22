@@ -10,5 +10,19 @@ BOLD="\033[1m"
 BLUE="\033[34;5;11m"
 
 read -p $'\e[1m\e[31mWhat problem do you want to search?\e[0m: ' problem
+echo -e "\e[1m\e[31mWhich engine do you want to use?\e[0m"
+echo "1) Google (default)"
+echo "2) DuckDuckGo"
+echo "3) StackOverExchange"
 
-/home/xtayex/.cargo/bin/so $problem
+engine='google'
+read n
+case $n in
+    1) engine='google';;
+    2) engine='duckduckgo';;
+    3) engine='stackexchange';;
+    *) echo 'invalid option'; exit;;
+esac
+echo $engine
+
+/home/xtayex/.cargo/bin/so $problem -e $engine
