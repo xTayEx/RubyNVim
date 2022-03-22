@@ -22,7 +22,7 @@ local lazygit = Terminal:new({
     float_opts = {
         border = "curved",
     }
-}) 
+})
 
 function _lazygit_toggle()
     lazygit:toggle()
@@ -47,10 +47,22 @@ function _termscp_toggle()
     termscp:toggle()
 end
 
+local sof = Terminal:new({
+    cmd = "/home/xtayex/.config/nvim/util/so_launcher.sh",
+    direction = "float",
+    float_opts = {
+        border = "curved"
+    }
+})
+
+function _sof_toggle()
+    sof:toggle()
+end
+
 local map = vim.api.nvim_set_keymap
 local opt = {noremap = true, silent = true}
 -- <leader>g prefix for toggleterm
 map("n", "<leader>gg", ":lua _lazygit_toggle()<cr>", opt)
 map("n", "<leader>gt", ":lua _htop_toggle()<cr>", opt)
 map("n", "<leader>gs", ":lua _termscp_toggle()<cr>", opt)
-
+map("n", "<leader>go", ":lua _sof_toggle()<cr>", opt)
