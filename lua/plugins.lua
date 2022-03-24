@@ -49,6 +49,21 @@ return require('packer').startup(function()
         }
         end
     }
+    use {
+        "luukvbaal/stabilize.nvim",
+        config = function() require("stabilize").setup() end
+    }
+    use {
+        'pwntester/octo.nvim',
+        requires = {
+            'nvim-lua/plenary.nvim',
+            'nvim-telescope/telescope.nvim',
+            'kyazdani42/nvim-web-devicons',
+        },
+        config = function ()
+            require"octo".setup()
+        end
+    }
     use { "akinsho/toggleterm.nvim" }
     use { "f-person/git-blame.nvim" }
     use { "lukas-reineke/indent-blankline.nvim"}
@@ -60,5 +75,6 @@ return require('packer').startup(function()
     use { "fannheyward/telescope-coc.nvim" }
     use { "folke/which-key.nvim" }
     use { "nvim-telescope/telescope-symbols.nvim" }
+    use { "haya14busa/is.vim" }
+    use { "McAuleyPenney/tidy.nvim", event = "BufWritePre" }
 end)
-
