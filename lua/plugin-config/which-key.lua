@@ -45,6 +45,7 @@ whichkey.register({
             m = {":Telescope man_pages<cr>", "Search man pages"},
             p = {":Telescope planets<cr>", "Planet!"},
             q = {":Telescope quickfix<cr>", "Quickfix"},
+            c = {":Telescope command_history<cr>", "Recent command"},
             s = {":Telescope symbols<cr>", "Search symbols(emoji, latex, kaomoji...etc.)"}
         }
     }
@@ -59,4 +60,3 @@ whichkey.register({
         }
     }
 })
-
