@@ -77,4 +77,12 @@ return require('packer').startup(function()
     use { "nvim-telescope/telescope-symbols.nvim" }
     use { "haya14busa/is.vim" }
     use { "McAuleyPenney/tidy.nvim", event = "BufWritePre" }
+    use { "lewis6991/impatient.nvim" }
+    use { "dstein64/vim-startuptime" }
+    config = {
+        display = {
+            open_fn = function()
+                return require('packer.util').float
+        end
+    }}
 end)

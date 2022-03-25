@@ -1,3 +1,4 @@
+require('impatient').enable_profile()
 require('basic')
 require('plugins')
 require('keybindings')
@@ -11,4 +12,3 @@ for i, file in pairs(top_paths) do
 end
 
 require('plugin-config.galaxyline-themes.nerd-galaxyline')
-
