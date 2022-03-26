@@ -18,7 +18,6 @@ telescope.load_extension('fzf')
 telescope.load_extension('file_browser')
 telescope.load_extension('coc')
 telescope.load_extension('aerial')
-telescope.load_extension('arecibo')
 
 -- <leader>f prefix for Telescope
 map("n", "<leader>fo", ":Telescope file_browser<cr>", opt)

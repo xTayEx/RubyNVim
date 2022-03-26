@@ -60,10 +60,6 @@ return require('packer').startup({function()
             require"octo".setup()
         end
     }
-    -- use {
-    --     "nvim-telescope/telescope-frecency.nvim",
-    --     requires = {"tami5/sqlite.lua"}
-    -- }
     use {
         'nvim-treesitter/nvim-treesitter',
         run = ':TSUpdate'
@@ -71,7 +67,6 @@ return require('packer').startup({function()
     use { "akinsho/toggleterm.nvim" }
     use { "f-person/git-blame.nvim" }
     use { "lukas-reineke/indent-blankline.nvim"}
-    use { "liuchengxu/vista.vim" }
     use { "mtoohey31/chafa.vim" }
     use { "ellisonleao/glow.nvim" }
     use { "nvim-telescope/telescope-file-browser.nvim" }
