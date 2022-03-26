@@ -34,6 +34,15 @@ whichkey.register({
 
 whichkey.register({
     ["<leader>"] = {
+        a = {
+            name = "Aerial",
+            a = {":AerialToggle!<cr>", "Toggle aerial window"}
+        }
+    }
+})
+
+whichkey.register({
+    ["<leader>"] = {
         f = {
             name = "Telescope",
             f = {":Telescope find_files<cr>", "Find project files"},
@@ -46,7 +55,8 @@ whichkey.register({
             p = {":Telescope planets<cr>", "Planet!"},
             q = {":Telescope quickfix<cr>", "Quickfix"},
             c = {":Telescope command_history<cr>", "Recent command"},
-            s = {":Telescope symbols<cr>", "Search symbols(emoji, latex, kaomoji...etc.)"}
+            s = {":Telescope symbols<cr>", "Search symbols(emoji, latex, kaomoji...etc.)"},
+            a = {":Telescope aerial<cr>", "Search aerial symbols"}
         }
     }
 })

@@ -17,6 +17,7 @@ telescope.setup {
 telescope.load_extension('fzf')
 telescope.load_extension('file_browser')
 telescope.load_extension('coc')
+telescope.load_extension('aerial')
 
 -- <leader>f prefix for Telescope
 map("n", "<leader>fo", ":Telescope file_browser<cr>", opt)
@@ -29,3 +30,4 @@ map("n", "<leader>fq", ":Telescope quickfix<cr>", opt)
 map("n", "<leader>fs", ":Telescope symbols<cr>", opt)
 map("n", "<leader>fp", ":Telescope planets<cr>", opt)
 map("n", "<leader>fc", ":Telescope command_history<cr>", opt)
+map("n", "<leader>fa", ":Telescope aerial<cr>", opt)

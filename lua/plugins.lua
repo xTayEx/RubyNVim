@@ -1,4 +1,4 @@
-return require('packer').startup(function()
+return require('packer').startup({function()
     -- Packer can manage itself
     use 'wbthomason/packer.nvim'
     -- use 'joshdick/onedark.vim'
@@ -40,6 +40,7 @@ return require('packer').startup(function()
         'nvim-telescope/telescope.nvim',
         requires = { {'nvim-lua/plenary.nvim'} }
     }
+    use {'stevearc/aerial.nvim'}
     use {
         'rmagatti/auto-session',
         config = function()
@@ -64,6 +65,10 @@ return require('packer').startup(function()
             require"octo".setup()
         end
     }
+    use {
+        'nvim-treesitter/nvim-treesitter',
+        run = ':TSUpdate'
+    }
     use { "akinsho/toggleterm.nvim" }
     use { "f-person/git-blame.nvim" }
     use { "lukas-reineke/indent-blankline.nvim"}
@@ -79,10 +84,6 @@ return require('packer').startup(function()
     use { "McAuleyPenney/tidy.nvim", event = "BufWritePre" }
     use { "lewis6991/impatient.nvim" }
     use { "dstein64/vim-startuptime" }
-    config = {
-        display = {
-            open_fn = function()
-                return require('packer.util').float
-        end
-    }}
-end)
+    use { "stevearc/stickybuf.nvim" }
+    end,
+})
