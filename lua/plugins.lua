@@ -13,11 +13,6 @@ return require('packer').startup({function()
         'numToStr/Comment.nvim',
         config = function() require('Comment').setup() end
     }
-    -- use {
-    --    'romgrk/barbar.nvim',
-    --    requires = {'kyazdani42/nvim-web-devicons'}
-    -- }
-    -- using packer.nvim
     use {
         'akinsho/bufferline.nvim',
         requires = 'kyazdani42/nvim-web-devicons'
@@ -65,6 +60,10 @@ return require('packer').startup({function()
             require"octo".setup()
         end
     }
+    -- use {
+    --     "nvim-telescope/telescope-frecency.nvim",
+    --     requires = {"tami5/sqlite.lua"}
+    -- }
     use {
         'nvim-treesitter/nvim-treesitter',
         run = ':TSUpdate'

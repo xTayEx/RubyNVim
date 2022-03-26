@@ -59,6 +59,15 @@ function _sof_toggle()
     sof:toggle()
 end
 
+local elinks = Terminal:new({
+    cmd = "elinks",
+    direction = "tab"
+})
+
+function _elinks_toggle()
+    elinks:toggle()
+end
+
 local map = vim.api.nvim_set_keymap
 local opt = {noremap = true, silent = true}
 -- <leader>g prefix for toggleterm
@@ -66,3 +75,4 @@ map("n", "<leader>gg", ":lua _lazygit_toggle()<cr>", opt)
 map("n", "<leader>gt", ":lua _htop_toggle()<cr>", opt)
 map("n", "<leader>gs", ":lua _termscp_toggle()<cr>", opt)
 map("n", "<leader>go", ":lua _sof_toggle()<cr>", opt)
+map("n", "<leader>ge", ":lua _elinks_toggle()<cr>", opt)

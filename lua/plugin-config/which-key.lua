@@ -27,7 +27,8 @@ whichkey.register({
             g = {":lua _lazygit_toggle()<cr>", "Open lazygit"},
             t = {":lua _htop_toggle()<cr>", "Open htop"},
             s = {":lua _termscp_toggle()<cr>", "Open termscp for transfer file"},
-            o = {":lua _sof_toggle()<cr>", "Search in StackExchange, DuckDuckGo or Google"}
+            o = {":lua _sof_toggle()<cr>", "Search in StackExchange, DuckDuckGo or Google"},
+            e = {":lua _elinks_toggle()<cr>", "Open elinks"}
         }
     }
 })
