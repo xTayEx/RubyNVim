@@ -79,5 +79,6 @@ return require('packer').startup({function()
     use { "lewis6991/impatient.nvim" }
     use { "dstein64/vim-startuptime" }
     use { "stevearc/stickybuf.nvim" }
+    use { "karb94/neoscroll.nvim" }
     end,
 })

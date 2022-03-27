@@ -48,6 +48,7 @@ A full-featured NeoVim config powered by Telescope.nvim and ToggleTerm
 | toggleterm.nvim | A neovim lua plugin to help easily manage multiple terminal windows |
 | vim-startuptime | A vim/neovim plugin for viewing vim and nvim startup event timing information |
 | which-key.nvim | A lua plugin for Neovim that displays a popup with possible key bindings of the command you started typing |
+| neoscroll.nvim | A smooth scrolling neovim plugin written in lua |
 
 ## External Dependencies
 | name | description |
