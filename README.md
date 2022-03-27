@@ -1,4 +1,4 @@
-<h1><center>RubyNvim</center></h1>
+# RubyNvim
 A full-featured NeoVim config powered by Telescope.nvim and ToggleTerm
 
 ## Feature
