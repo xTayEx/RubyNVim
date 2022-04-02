@@ -1,5 +1,4 @@
 require'nvim-tree'.setup {
-    auto_close           = true,
     disable_netrw        = false,
     hijack_netrw         = true,
     open_on_setup        = false,

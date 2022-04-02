@@ -3,15 +3,24 @@ local map = vim.api.nvim_set_keymap
 local opt = {noremap = true, silent = true}
 
 telescope.setup {
-  extensions = {
-    fzf = {
-      fuzzy = true,                    -- false will only do exact matching
-      override_generic_sorter = true,  -- override the generic sorter
-      override_file_sorter = true,     -- override the file sorter
-      case_mode = "smart_case",        -- or "ignore_case" or "respect_case"
-                                       -- the default case_mode is "smart_case"
+    defaults = {
+        prompt_prefix = "❯ ",
+        selection_caret = "❯ ",
     },
-  }
+    extensions = {
+        fzf = {
+            fuzzy = true,                    -- false will only do exact matching
+            override_generic_sorter = true,  -- override the generic sorter
+            override_file_sorter = true,     -- override the file sorter
+            case_mode = "smart_case",        -- or "ignore_case" or "respect_case"
+                                            -- the default case_mode is "smart_case"
+        },
+        file_browser = {
+            prompt_title = " File Browser",
+            path_display = { "smart" },
+            cwd = "~",
+        }
+    }
 }
 
 telescope.load_extension('fzf')
@@ -31,3 +40,4 @@ map("n", "<leader>fs", ":Telescope symbols<cr>", opt)
 map("n", "<leader>fp", ":Telescope planets<cr>", opt)
 map("n", "<leader>fc", ":Telescope command_history<cr>", opt)
 map("n", "<leader>fa", ":Telescope aerial<cr>", opt)
+map("n", "<leader>ft", ":Telescope lsp_code_actions<cr>", opt)

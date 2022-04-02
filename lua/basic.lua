@@ -47,4 +47,5 @@ vim.o.shell = 'zsh'
 
 vim.cmd('syntax on')
 vim.cmd("let g:coc_node_path = '/home/xtayex/.nvm/versions/node/v12.18.0/bin/node'")
-vim.cmd("let g:gitblame_ignored_filetypes = ['NvimTree', 'packer', 'startuptime']")
+vim.cmd("let g:gitblame_ignored_filetypes = ['NvimTree', 'packer', 'startuptime', 'lsp-installer', 'lspinfo', 'help', 'Trouble']")
+vim.cmd("let g:indent_blankline_filetype_exclude = ['lsp-installer', 'lspinfo', 'packer', 'help', 'Trouble']")

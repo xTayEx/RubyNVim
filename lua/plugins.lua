@@ -1,4 +1,4 @@
-return require('packer').startup({function()
+return require('packer').startup({function(use)
     -- Packer can manage itself
     use 'wbthomason/packer.nvim'
     -- use 'joshdick/onedark.vim'
@@ -21,9 +21,9 @@ return require('packer').startup({function()
         'windwp/nvim-autopairs',
         config = function() require('nvim-autopairs').setup() end
     }
-    use {'neoclide/coc.nvim', branch = 'release'}
+    -- use {'neoclide/coc.nvim', branch = 'release'}
     use {
-        'glepnir/galaxyline.nvim',
+        'NTBBloodbath/galaxyline.nvim',
         branch = 'main',
         -- some optional icons
         requires = {'kyazdani42/nvim-web-devicons', opt = true}
@@ -64,6 +64,45 @@ return require('packer').startup({function()
         'nvim-treesitter/nvim-treesitter',
         run = ':TSUpdate'
     }
+    use {
+    'VonHeikemen/lsp-zero.nvim',
+        requires = {
+            -- LSP Support
+            {'neovim/nvim-lspconfig'},
+            {'williamboman/nvim-lsp-installer'},
+
+            -- Autocompletion
+            {'hrsh7th/nvim-cmp'},
+            {'hrsh7th/cmp-buffer'},
+            {'hrsh7th/cmp-path'},
+            {'saadparwaiz1/cmp_luasnip'},
+            {'hrsh7th/cmp-nvim-lsp'},
+            {'hrsh7th/cmp-nvim-lua'},
+
+            -- Snippets
+            {'L3MON4D3/LuaSnip'},
+            {'rafamadriz/friendly-snippets'},
+        }
+    }
+    use {
+        "kosayoda/nvim-lightbulb",
+        config = function ()
+            vim.cmd([[autocmd CursorHold,CursorHoldI * lua require'nvim-lightbulb'.update_lightbulb()]])
+        end
+    }
+    use {
+        "folke/trouble.nvim",
+        requires = "kyazdani42/nvim-web-devicons",
+        config = function()
+            require("trouble").setup { }
+        end
+    }
+    use { 'hrsh7th/cmp-cmdline' }
+    use { "f3fora/cmp-spell" }
+    use { "hrsh7th/cmp-nvim-lua" }
+
+    use { "onsails/lspkind-nvim" }
+
     use { "akinsho/toggleterm.nvim" }
     use { "f-person/git-blame.nvim" }
     use { "lukas-reineke/indent-blankline.nvim"}
@@ -80,5 +119,7 @@ return require('packer').startup({function()
     use { "dstein64/vim-startuptime" }
     use { "stevearc/stickybuf.nvim" }
     use { "karb94/neoscroll.nvim" }
+    use { "folke/lsp-colors.nvim" }
+    use { "nathom/filetype.nvim" }
     end,
 })

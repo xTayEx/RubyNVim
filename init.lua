@@ -11,4 +11,9 @@ for i, file in pairs(top_paths) do
     vim.cmd('source ' .. file)
 end
 
+local lsp_paths = vim.split(vim.fn.glob('~/.config/nvim/lua/completion/*lua'), '\n')
+for i, file in pairs(lsp_paths) do
+    vim.cmd('source ' .. file)
+end
+
 require('plugin-config.galaxyline-themes.nerd-galaxyline')

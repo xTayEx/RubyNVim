@@ -57,7 +57,8 @@ whichkey.register({
             q = {":Telescope quickfix<cr>", "Quickfix"},
             c = {":Telescope command_history<cr>", "Recent command"},
             s = {":Telescope symbols<cr>", "Search symbols(emoji, latex, kaomoji...etc.)"},
-            a = {":Telescope aerial<cr>", "Search aerial symbols"}
+            a = {":Telescope aerial<cr>", "Search aerial symbols"},
+            t = {":Telescope lsp_code_actions<cr>", "Code actions"}
         }
     }
 })
