@@ -21,7 +21,6 @@ return require('packer').startup({function(use)
         'windwp/nvim-autopairs',
         config = function() require('nvim-autopairs').setup() end
     }
-    -- use {'neoclide/coc.nvim', branch = 'release'}
     use {
         'NTBBloodbath/galaxyline.nvim',
         branch = 'main',
@@ -65,6 +64,12 @@ return require('packer').startup({function(use)
         run = ':TSUpdate'
     }
     use {
+        "ahmedkhalf/project.nvim",
+        config = function()
+            require("project_nvim").setup { }
+        end
+    }
+    use {
     'VonHeikemen/lsp-zero.nvim',
         requires = {
             -- LSP Support
@@ -95,6 +100,17 @@ return require('packer').startup({function(use)
         requires = "kyazdani42/nvim-web-devicons",
         config = function()
             require("trouble").setup { }
+        end
+    }
+    use {
+        'windwp/nvim-spectre',
+        config = function ()
+            require('nvim-spectre').setup {
+                live_update = true,
+                line_sep_start = '╭─────────────────────────────────────────',
+                result_padding = '│ ',
+                line_sep       = '╰─────────────────────────────────────────',
+            }
         end
     }
     use { 'hrsh7th/cmp-cmdline' }
