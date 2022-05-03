@@ -2,15 +2,15 @@
 A full-featured NeoVim config powered by Telescope.nvim and ToggleTerm
 
 ## Feature
-* Fast(<100ms for startup). Load all configuration files **asynchronously**
-* Code completion powered by nvim-cmp
-* File tree powered by NvimTree
-* Open lazygit in your NeoVim
-* Search StackOverflow, Google or DuckDuckGo when you are coding
-* sftp, ftp, s3 in NeoVim (powered by ToggleTerm and termscp)
-* Open htop in NeoVim
-* Open image by chafa
-* Preview markdown by glow
+* Fast(<100 ms for startup). Load all configuration files **asynchronously**.
+* Code completion powered by nvim-cmp.
+* File tree powered by NvimTree.
+* Open lazygit in your NeoVim.
+* Search StackOverflow, Google or DuckDuckGo when you are coding.
+* sftp, ftp, s3 in NeoVim (powered by ToggleTerm and termscp).
+* Open htop in NeoVim.
+* Open image by chafa.
+* Preview markdown by glow.
 * Browse web in NeoVim! (powered by elinks)
 * And more...
 
@@ -62,4 +62,7 @@ A full-featured NeoVim config powered by Telescope.nvim and ToggleTerm
 | chafa | A terminal grapics viewer |
 
 ## Install
-TODO
+Simply run `install.sh`.
+```bash
+$ ./install.sh
+```
