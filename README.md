@@ -2,7 +2,8 @@
 A full-featured NeoVim config powered by Telescope.nvim and ToggleTerm
 
 ## Feature
-* Code completion powered by coc.nvim
+* Fast(<100ms for startup). Load all configuration files **asynchronously**
+* Code completion powered by nvim-cmp
 * File tree powered by NvimTree
 * Open lazygit in your NeoVim
 * Search StackOverflow, Google or DuckDuckGo when you are coding
