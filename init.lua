@@ -39,8 +39,12 @@ function load_plugin_config()
     require('completion.' .. file).config()
     end
 
-    require('plugin-config.galaxyline-themes.nerd-galaxyline')
 end
+
+vim.cmd('set background=dark')
+vim.cmd('colorscheme deus')
+require('plugin-config.galaxyline-themes.nerd-galaxyline')
+
 local async
 async = vim.loop.new_async(
     vim.schedule_wrap(
@@ -49,8 +53,6 @@ async = vim.loop.new_async(
             require('plugins')
             require('keybindings')
 
-            vim.cmd('set background=dark')
-            vim.cmd('colorscheme deus')
             disable_built_in_plugins()
             load_plugin_config()
             async:close()
