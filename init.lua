@@ -43,7 +43,6 @@ end
 
 vim.cmd('set background=dark')
 vim.cmd('colorscheme deus')
-vim.g.deus_background = "mid"
 require('plugin-config.galaxyline-themes.nerd-galaxyline')
 
 local async
