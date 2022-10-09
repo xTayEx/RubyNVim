@@ -1,5 +1,7 @@
-vim.g.mapleader = ","
-vim.g.maplocalleader = ","
+vim.cmd[[
+    let mapleader = "," 
+    let maplocalleader = ","
+]]
 
 local map = vim.api.nvim_set_keymap
 local opt = {noremap = true, silent = true}
@@ -24,8 +26,10 @@ map("n", "<leader>gb", "<cmd>BufferLinePick<cr>", opt)
 map("n", "<leader>af", "<cmd>lua require('spectre').open()<cr>", opt)
 map("n", "<leader>at", "<cmd>TroubleToggle<cr>", opt)
 
-map("n", "<F5>", "<cmd>AsyncTask thesis-compile<cr>", opt)
-map("n", "<F6>", "<cmd>AsyncTask count<cr>", opt)
+map("n", "<F5>", "<cmd>AsyncTaskLast<cr>", opt)
+map("n", "<F6>", "<cmd>lua require('renamer').rename()<cr>", opt)
+
+map("n", "<leader>gd", "<cmd>Neogen<cr>", opt)
 
 vim.cmd[[
 noremap <expr> j (v:count == 0 ? 'gj' : 'j')

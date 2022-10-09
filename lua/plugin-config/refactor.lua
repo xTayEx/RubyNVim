@@ -1,5 +1,7 @@
 local M = {}
+
 function M.config()
-    require('nvim-autopairs').setup{}
+    require("renamer").setup{}
 end
+
 return M

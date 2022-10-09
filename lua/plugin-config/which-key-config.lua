@@ -65,6 +65,8 @@ function M.config()
                 e = {"<cmd>Telescope media_files<cr>", "Media files"},
                 x = {"<cmd>Telescope bibtex<cr>", "Bibtex"},
                 p = {"<cmd>Telescope projects<cr>", "projects"},
+                u = {"<cmd>Telescope resume<cr>", "Resume Telescope to previous state"},
+                j = {"<cmd>Telescope jumplist<cr>", "Jumplist"}
             }
         }
     })

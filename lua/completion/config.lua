@@ -5,6 +5,13 @@ function M.config()
 
     lsp.preset('recommended')
     lsp.setup()
+    lsp.nvim_workspace()
+
+    vim.diagnostic.config({
+        virtual_text = {
+            prefix = ''
+        }
+    })
 
     local cmp = require'cmp'
     local devicons = require('nvim-web-devicons')

@@ -4,7 +4,7 @@ function M.config()
     local Terminal = require('toggleterm.terminal').Terminal
 
     require('toggleterm').setup {
-        function (term)
+        size = function (term)
             if term.direction == "horizontal" then
                 return 15
             elseif term.direction == "vertical" then
@@ -13,7 +13,8 @@ function M.config()
         end,
         open_mapping = [[<leader>ta]],
         hide_numbers = true,
-        direction = 'tab'
+        direction = 'vertical',
+        shade_terminals = false
     }
 
     -- lazygit
@@ -51,7 +52,7 @@ function M.config()
     end
 
     local sof = Terminal:new({
-        cmd = "/home/xtayex/.config/nvim/util/so_launcher.sh",
+        cmd = "/home/xtyaex/.config/nvim/util/so_launcher.sh",
         direction = "float",
         float_opts = {
             border = "curved"
@@ -71,6 +72,15 @@ function M.config()
         elinks:toggle()
     end
 
+    local ipython = Terminal:new({
+        cmd = "ipython",
+        direction = "vertical",
+    })
+
+    function _ipython_toggle()
+        ipython:toggle()
+    end
+
     local map = vim.api.nvim_set_keymap
     local opt = {noremap = true, silent = true}
     -- <leader>t prefix for toggleterm
@@ -79,6 +89,7 @@ function M.config()
     map("n", "<leader>ts", ":lua _termscp_toggle()<cr>", opt)
     map("n", "<leader>to", ":lua _sof_toggle()<cr>", opt)
     map("n", "<leader>te", ":lua _elinks_toggle()<cr>", opt)
+    map("n", "<leader>tp", ":lua _ipython_toggle()<cr>", opt)
 end
 
 return M
