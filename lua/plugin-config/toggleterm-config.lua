@@ -11,7 +11,7 @@ function M.config()
                 return 100
             end
         end,
-        open_mapping = [[<leader>ta]],
+        -- open_mapping = [[<leader>ta]],
         hide_numbers = true,
         direction = 'vertical',
         shade_terminals = false

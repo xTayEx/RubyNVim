@@ -27,7 +27,7 @@ function M.config()
         ["<leader>"] = {
             t = {
                 name = "toggleterm",
-                a = {"Open a terminal"},
+                a = {"<cmd>ToggleTerm<cr>", "Open a terminal"},
                 g = {"<cmd>lua _lazygit_toggle()<cr>", "Open lazygit"},
                 t = {"<cmd>lua _htop_toggle()<cr>", "Open htop"},
                 s = {"<cmd>lua _termscp_toggle()<cr>", "Open termscp for transfer file"},
