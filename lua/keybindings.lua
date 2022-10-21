@@ -1,6 +1,7 @@
 vim.cmd[[
-    let mapleader = "," 
-    let maplocalleader = ","
+    nnoremap <SPACE> <Nop>
+    let mapleader = " " 
+    let maplocalleader = " "
 ]]
 
 local map = vim.api.nvim_set_keymap
@@ -10,8 +11,8 @@ map("n", "<leader>w", "<cmd>w<CR>", opt)
 map("n", "<leader>q", "<cmd>q<CR>", opt)
 map("n", "<leader>ve", "<cmd>e ~/.config/nvim/init.lua<cr>", opt)
 map("n", "<leader>vs", "<cmd>so ~/.config/nvim/init.lua<cr>", opt)
-map("n", "<C-N>", "<cmd>bn<cr>", opt)
-map("n", "<C-P>", "<cmd>bp<cr>", opt)
+map("n", "<C-[>", "<cmd>bn<cr>", opt)
+map("n", "<C-]>", "<cmd>bp<cr>", opt)
 map("n", "<leader>d", "<cmd>bd<cr>", opt)
 map("n", "J", "3j", opt)
 map("n", "K", "3k", opt)

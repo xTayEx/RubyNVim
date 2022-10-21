@@ -20,8 +20,10 @@ function M.config()
             },
             file_browser = {
                 prompt_title = " File Browser",
-                path_display = { "smart" },
-                path = "%:p:h"
+                -- path_display = { "smart" },
+                theme = "ivy",
+                -- path = "%:p:h"
+                cwd_to_path = true
             },
             media_files = {
                 find_cmd = "rg"

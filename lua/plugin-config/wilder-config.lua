@@ -18,20 +18,32 @@ function M.config()
 
     -- popupmenu_palette_theme
     wilder.set_option('renderer', wilder.popupmenu_renderer(
-        wilder.popupmenu_palette_theme({
-            border = 'rounded',
-            max_height = '35%',      -- max height of the palette
-            min_height = 0,          -- set to the same as 'max_height' for a fixed height window
-            prompt_position = 'top', -- 'top' or 'bottom' to set the location of the prompt
-            reverse = 0,
-            highlighter = wilder.basic_highlighter(),
+        wilder.popupmenu_border_theme({
             highlights = {
-                accent = wilder.make_hl('WilderAccent', 'Pmenu', {{a = 1}, {a = 1}, {foreground = '#f4468f'}}),
+                border = 'Normal',
             },
+            border = 'rounded',
+            min_width = '100%',
+            max_height = '50%',
+            highlighter = wilder.basic_highlighter(),
             left = {' ', wilder.popupmenu_devicons()},
             right = {' ', wilder.popupmenu_scrollbar()},
-        })
-    ))
+        }))
+    )
 end
+--        wilder.popupmenu_palette_theme({
+--            border = 'rounded',
+--            max_height = '35%',      -- max height of the palette
+--            min_height = 0,          -- set to the same as 'max_height' for a fixed height window
+--            prompt_position = 'top', -- 'top' or 'bottom' to set the location of the prompt
+--            reverse = 0,
+--            highlighter = wilder.basic_highlighter(),
+--            highlights = {
+--                accent = wilder.make_hl('WilderAccent', 'Pmenu', {{a = 1}, {a = 1}, {foreground = '#f4468f'}}),
+--            },
+--            left = {' ', wilder.popupmenu_devicons()},
+--            right = {' ', wilder.popupmenu_scrollbar()},
+--        })
+--    ))
 
 return M
