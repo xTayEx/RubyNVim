@@ -4,6 +4,7 @@ function M.config()
     local telescope = require('telescope')
     local map = vim.api.nvim_set_keymap
     local opt = {noremap = true, silent = true}
+    local fb_actions = require "telescope".extensions.file_browser.actions
 
     telescope.setup {
         defaults = {
@@ -24,6 +25,11 @@ function M.config()
                 theme = "ivy",
                 -- path = "%:p:h"
                 cwd_to_path = true
+                -- mappings = {
+                --     ["n"] = {
+                --         ["<C-a>"] = fb_actions.create
+                --     }
+                -- }
             },
             media_files = {
                 find_cmd = "rg"

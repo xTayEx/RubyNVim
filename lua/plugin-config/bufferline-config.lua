@@ -11,6 +11,14 @@ function M.config()
             numbers = function(opts)
                 return string.format('%s·%s', opts.raise(opts.id), opts.lower(opts.ordinal))
             end,
+            buffer_close_icon = '',
+            modified_icon = '',
+            close_icon = '',
+            indicator = {
+                icon = '▎',
+                style = 'icon'
+
+            }
         }
     }
 end
