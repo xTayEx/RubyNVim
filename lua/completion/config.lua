@@ -6,7 +6,16 @@ function M.config()
     lsp.preset('recommended')
     lsp.setup()
     lsp.nvim_workspace()
+    lsp.on_attach(function(client, bufnr)
+        local noremap = {buffer = bufnr, remap = false}
+        local bind = vim.keymap.set
 
+        -- Remove the fucking lsp-zero keybinding for K and <C-k>
+        -- Why you set such a fucking stupid keybinding? Don't you know many people use <C-k> for
+        -- moving between splits?
+        bind('n', '<C-k>', '<C-w>k', noremap)
+        bind('n', 'K', '3k', noremap)
+    end)
     vim.diagnostic.config({
         virtual_text = {
             prefix = ' '

@@ -5,6 +5,8 @@ vim.cmd[[
 ]]
 
 local map = vim.api.nvim_set_keymap
+local unmap = vim.api.nvim_del_keymap
+local unmap_local = vim.api.nvim_buf_del_keymap
 local opt = {noremap = true, silent = true}
 
 map("n", "<leader>w", "<cmd>w<CR>", opt)
@@ -20,7 +22,6 @@ map("n", "<C-H>", "<C-W>h", opt)
 map("n", "<C-J>", "<C-W>j", opt)
 map("n", "<C-K>", "<C-W>k", opt)
 map("n", "<C-L>", "<C-W>l", opt)
-
 map("n", "<leader>e", "<cmd>NvimTreeToggle<cr>", opt)
 map("n", "<leader>gb", "<cmd>BufferLinePick<cr>", opt)
 

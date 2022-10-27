@@ -6,7 +6,7 @@ return require('packer').startup({
         use { 'kyazdani42/nvim-web-devicons' }
         use {
             'kyazdani42/nvim-tree.lua',
-            requires = {
+        requires = {
                 'kyazdani42/nvim-web-devicons', -- optional, for file icon
 	    }
             -- config = function() require'nvim-tree'.setup {} end
@@ -105,8 +105,13 @@ return require('packer').startup({
         use {
             "folke/trouble.nvim",
             requires = "kyazdani42/nvim-web-devicons",
-            config = function()
-                require("trouble").setup { }
+            config = function ()
+                require("trouble").setup {
+                    action_keys = {
+                        hover = "T"
+                    },
+                    indent_lines = false
+                }
             end
         }
 
