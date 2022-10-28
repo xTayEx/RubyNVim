@@ -125,7 +125,7 @@ return require('packer').startup({
             'sindrets/diffview.nvim',
             requires = 'nvim-lua/plenary.nvim'
         }
-        use { 
+        use {
             'michaelb/sniprun', 
             run = 'bash ./install.sh',
             requires = 'rcarriga/nvim-notify',
@@ -216,6 +216,14 @@ return require('packer').startup({
             config = function ()
                 require('nvim-highlight-colors').setup {}
             end
+        }
+        use {
+            'MrcJkb/haskell-tools.nvim',
+            requires = {
+                'neovim/nvim-lspconfig',
+                'nvim-lua/plenary.nvim',
+                'nvim-telescope/telescope.nvim', -- optional
+            }
         }
         use { "chentoast/marks.nvim" }
         use { "posva/vim-vue" }

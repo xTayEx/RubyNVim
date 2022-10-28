@@ -6,15 +6,30 @@ function M.config()
     lsp.preset('recommended')
     lsp.setup()
     lsp.nvim_workspace()
-    lsp.on_attach(function(client, bufnr)
-        local noremap = {buffer = bufnr, remap = false}
-        local bind = vim.keymap.set
+    lsp.set_preferences({
+        set_lsp_keymaps = false
+    })
 
-        -- Remove the fucking lsp-zero keybinding for K and <C-k>
-        -- Why you set such a fucking stupid keybinding? Don't you know many people use <C-k> for
-        -- moving between splits?
-        bind('n', '<C-k>', '<C-w>k', noremap)
-        bind('n', 'K', '3k', noremap)
+    lsp.on_attach(function(client, bufnr)
+        local map = function(mode, lhs, rhs)
+            local opts = {remap = false, buffer = bufnr}
+            vim.keymap.set(mode, lhs, rhs, opts)
+        end
+
+        -- LSP actions
+        map('n', 'gd', '<cmd>lua vim.lsp.buf.definition()<cr>')
+        map('n', 'gD', '<cmd>lua vim.lsp.buf.declaration()<cr>')
+        map('n', 'gi', '<cmd>lua vim.lsp.buf.implementation()<cr>')
+        map('n', 'go', '<cmd>lua vim.lsp.buf.type_definition()<cr>')
+        map('n', 'gr', '<cmd>lua vim.lsp.buf.references()<cr>')
+        map('n', '<F2>', '<cmd>lua vim.lsp.buf.rename()<cr>')
+        map('n', '<F4>', '<cmd>lua vim.lsp.buf.code_action()<cr>')
+        map('x', '<F4>', '<cmd>lua vim.lsp.buf.range_code_action()<cr>')
+
+        -- Diagnostics
+        map('n', 'gl', '<cmd>lua vim.diagnostic.open_float()<cr>')
+        map('n', '[d', '<cmd>lua vim.diagnostic.goto_prev()<cr>')
+        map('n', ']d', '<cmd>lua vim.diagnostic.goto_next()<cr>')
     end)
     vim.diagnostic.config({
         virtual_text = {
@@ -23,20 +38,20 @@ function M.config()
     })
 
     local cmp = require'cmp'
-    local devicons = require('nvim-web-devicons')
-    cmp.register_source('devicons', {
-        complete = function(self, params, callback)
-            local items = {}
-            for _, icon in pairs(devicons.get_icons()) do
-                table.insert(items, {
-                    label = icon.icon .. '  ' .. icon.name,
-                    insertText = icon.icon,
-                    filterText = icon.name,
-            })
-            end
-            callback({ items = items })
-        end,
-    })
+    -- local devicons = require('nvim-web-devicons')
+    -- cmp.register_source('devicons', {
+    --     complete = function(self, params, callback)
+    --         local items = {}
+    --         for _, icon in pairs(devicons.get_icons()) do
+    --             table.insert(items, {
+    --                 label = icon.icon .. '  ' .. icon.name,
+    --                 insertText = icon.icon,
+    --                 filterText = icon.name,
+    --         })
+    --         end
+    --         callback({ items = items })
+    --     end,
+    -- })
 
     local lspkind = require('lspkind')
     cmp.setup {
