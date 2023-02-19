@@ -78,6 +78,7 @@ return require('packer').startup({
         }
         use {
             'VonHeikemen/lsp-zero.nvim',
+            branch = 'v1.x',
             requires = {
                 -- LSP Support
                 {'neovim/nvim-lspconfig'},
