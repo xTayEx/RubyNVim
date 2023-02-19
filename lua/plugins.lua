@@ -11,6 +11,7 @@ return require('packer').startup({
 	    }
             -- config = function() require'nvim-tree'.setup {} end
         }
+        use { 'bfrg/vim-cpp-modern' }
         use { "nvim-lua/popup.nvim"}
         use {
             'numToStr/Comment.nvim',
@@ -80,7 +81,8 @@ return require('packer').startup({
             requires = {
                 -- LSP Support
                 {'neovim/nvim-lspconfig'},
-                {'williamboman/nvim-lsp-installer'},
+                {'williamboman/mason.nvim'},           -- Optional
+                {'williamboman/mason-lspconfig.nvim'},
 
                 -- Autocompletion
                 {'hrsh7th/nvim-cmp'},
@@ -149,16 +151,16 @@ return require('packer').startup({
             end
         }
 
-        use {
-            'filipdutescu/renamer.nvim',
-            config = function ()
-                require('renamer').setup {
-                    title = 'Rename'
-                }
-            end,
-            branch = 'master',
-            requires = { {'nvim-lua/plenary.nvim'} },
-        }
+        -- use {
+        --     'filipdutescu/renamer.nvim',
+        --     config = function ()
+        --         require('renamer').setup {
+        --             title = 'Rename'
+        --         }
+        --     end,
+        --     branch = 'master',
+        --     requires = { {'nvim-lua/plenary.nvim'} },
+        -- }
         use {
             "danymat/neogen",
             config = function()
@@ -169,6 +171,12 @@ return require('packer').startup({
             -- tag = "*"
         }
 
+        use { 
+          "j-hui/fidget.nvim",
+          config = function()
+              require("fidget").setup{}
+          end
+        }
         use { "f3fora/cmp-spell" }
         use { "hrsh7th/cmp-nvim-lua" }
 
@@ -225,10 +233,11 @@ return require('packer').startup({
                 'nvim-telescope/telescope.nvim', -- optional
             }
         }
+        use { "tamago324/nlsp-settings.nvim" }
         use { "chentoast/marks.nvim" }
         use { "posva/vim-vue" }
         use { 'chemzqm/wxapp.vim' }
-
+        use { 'kmonad/kmonad-vim' }
         -- luarock
         use { 'romgrk/fzy-lua-native' }
     end

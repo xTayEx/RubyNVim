@@ -32,6 +32,8 @@ map("n", "<F5>", "<cmd>AsyncTaskLast<cr>", opt)
 map("n", "<F6>", "<cmd>lua require('renamer').rename()<cr>", opt)
 
 map("n", "<leader>gd", "<cmd>Neogen<cr>", opt)
+map("n", "<leader>th", "<cmd>BufferLineMovePrev<cr>", opt)
+map("n", "<leader>tl", "<cmd>BufferLineMoveNext<cr>", opt)
 
 vim.cmd[[
 noremap <expr> j (v:count == 0 ? 'gj' : 'j')

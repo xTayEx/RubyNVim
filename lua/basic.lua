@@ -4,13 +4,13 @@ vim.o.fileencoding = "utf-8"
 vim.wo.number = true
 -- vim.wo.relativenumber = true
 
-vim.o.tabstop = 4
-vim.bo.tabstop = 4
-vim.o.softtabstop = 4
+vim.o.tabstop = 2
+vim.bo.tabstop = 2
+vim.o.softtabstop = 2
 vim.o.shiftround = true
 
-vim.o.shiftwidth = 4
-vim.bo.shiftwidth = 4
+vim.o.shiftwidth = 2
+vim.bo.shiftwidth = 2
 
 vim.o.expandtab = true
 vim.bo.expandtab = true

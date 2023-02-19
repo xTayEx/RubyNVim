@@ -1,10 +1,14 @@
 local M = {}
 function M.config()
     require("aerial").setup({
-        max_width = { 60, 0.4 },
-        width = 30,
-        min_width = 10,
+        layout = {
+            max_width = { 60, 0.4 },
+            width = 30,
+            min_width = 10,
+            default_direction = 'prefer_right',
+        },
         default_bindings = true,
+        placement = 'window',
         show_guide = true,
         filter_kind = false,
         highlight_on_hover = true,

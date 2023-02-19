@@ -1,22 +1,27 @@
 local M = {}
 
 function M.config()
-    local lsp = require('lsp-zero')
+    vim.opt.signcolumn = 'yes'
+    local lsp_zero = require('lsp-zero')
 
-    lsp.preset('recommended')
-    lsp.setup()
-    lsp.nvim_workspace()
-    lsp.set_preferences({
-        set_lsp_keymaps = false
+    lsp_zero.preset({
+      name = 'minimal',
+      set_lsp_keymaps = false,
+      manage_nvim_lsp = true,
+      suggest_lsp_servers = true,
     })
+    lsp_zero.nvim_workspace()
+    lsp_zero.setup()
 
-    lsp.on_attach(function(client, bufnr)
+    lsp_zero.on_attach(function(client, bufnr)
         local map = function(mode, lhs, rhs)
             local opts = {remap = false, buffer = bufnr}
             vim.keymap.set(mode, lhs, rhs, opts)
         end
 
         -- LSP actions
+        map('n', 'dT', '<cmd>lua vim.lsp.buf.hover()<cr>')
+        map('n', '<C-T>', '<cmd>lua vim.lsp.buf.signature_help()<cr>')
         map('n', 'gd', '<cmd>lua vim.lsp.buf.definition()<cr>')
         map('n', 'gD', '<cmd>lua vim.lsp.buf.declaration()<cr>')
         map('n', 'gi', '<cmd>lua vim.lsp.buf.implementation()<cr>')
@@ -31,30 +36,19 @@ function M.config()
         map('n', '[d', '<cmd>lua vim.diagnostic.goto_prev()<cr>')
         map('n', ']d', '<cmd>lua vim.diagnostic.goto_next()<cr>')
     end)
-    vim.diagnostic.config({
-        virtual_text = {
-            prefix = ' '
-        }
-    })
-
-    local cmp = require'cmp'
-    -- local devicons = require('nvim-web-devicons')
-    -- cmp.register_source('devicons', {
-    --     complete = function(self, params, callback)
-    --         local items = {}
-    --         for _, icon in pairs(devicons.get_icons()) do
-    --             table.insert(items, {
-    --                 label = icon.icon .. '  ' .. icon.name,
-    --                 insertText = icon.icon,
-    --                 filterText = icon.name,
-    --         })
-    --         end
-    --         callback({ items = items })
-    --     end,
+    -- lsp.configure('pyright', {
+    --     on_attach = function (client, bufnr)
+    --         client.configs.setttings.python.pythonPath = get_python_env_path(client.configs.root_dir)
+    --     end
     -- })
+
+    local cmp = require('cmp')
 
     local lspkind = require('lspkind')
     cmp.setup {
+        window= {
+            documentation = cmp.config.window.bordered(),
+        },
         formatting = {
             format = lspkind.cmp_format({
                 mode = 'symbol', -- show only symbol annotations
