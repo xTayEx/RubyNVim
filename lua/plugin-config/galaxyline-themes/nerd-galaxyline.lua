@@ -263,6 +263,28 @@ insert_left {
 
 insert_blank_line_at_left()
 
+insert_left {
+  ZoomIcon = {
+    provider = function ()
+      if vim.fn['zoom#statusline']() == 'zoomed' then
+        return '  '
+      else
+        return ''
+      end
+    end,
+    highlight = {colors.cyan, colors.line_bg}
+  }
+}
+
+insert_left {
+  Zoom = {
+    provider = vim.fn['zoom#statusline'],
+    highlight = {'#8FBCBB',colors.line_bg},
+  }
+}
+
+insert_blank_line_at_left()
+
 local checkwidth = function()
   local squeeze_width  = vim.fn.winwidth(0) / 2
   if squeeze_width > 40 then

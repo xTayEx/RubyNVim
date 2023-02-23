@@ -76,6 +76,7 @@ return require('packer').startup({
                 require("project_nvim").setup { }
             end
         }
+        use { 'dhruvasagar/vim-zoom' }
         use {
             'VonHeikemen/lsp-zero.nvim',
             branch = 'v1.x',
