@@ -4,7 +4,7 @@ function M.config()
 	vim.opt.signcolumn = "yes"
 	local lsp_zero = require("lsp-zero").preset({
 		name = "recommended",
-		set_lsp_keymaps = { omit = { "K" } },
+		set_lsp_keymaps = { omit = { "K" }, preserve_mappings = false },
 		manage_nvim_lsp = true,
 		suggest_lsp_servers = true,
 		setup_servers_on_startup = true,
