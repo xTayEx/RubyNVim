@@ -187,16 +187,6 @@ return require("packer").startup({
 			end,
 		})
 
-		-- use {
-		--     'filipdutescu/renamer.nvim',
-		--     config = function ()
-		--         require('renamer').setup {
-		--             title = 'Rename'
-		--         }
-		--     end,
-		--     branch = 'master',
-		--     requires = { {'nvim-lua/plenary.nvim'} },
-		-- }
 		use({
 			"danymat/neogen",
 			config = function()
@@ -219,7 +209,14 @@ return require("packer").startup({
 				require("guess-indent").setup({})
 			end,
 		})
-		use({ "Yggdroot/indentLine" })
+		use({
+			"lukas-reineke/indent-blankline.nvim",
+			config = function()
+				require("indent_blankline").setup({
+					char = "¦",
+				})
+			end,
+		})
 		use({ "f3fora/cmp-spell" })
 		use({ "hrsh7th/cmp-nvim-lua" })
 
@@ -276,6 +273,7 @@ return require("packer").startup({
 		use({ "chentoast/marks.nvim" })
 		use({ "posva/vim-vue" })
 		use({ "chemzqm/wxapp.vim" })
+		use({ "rainbowhxch/accelerated-jk.nvim" })
 		use({ "kmonad/kmonad-vim" })
 		use({
 			"stevearc/dressing.nvim",

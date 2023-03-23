@@ -35,7 +35,9 @@ map("n", "<leader>gd", "<cmd>Neogen<cr>", opt)
 map("n", "<leader>th", "<cmd>BufferLineMovePrev<cr>", opt)
 map("n", "<leader>tl", "<cmd>BufferLineMoveNext<cr>", opt)
 
-vim.cmd[[
-noremap <expr> j (v:count == 0 ? 'gj' : 'j')
-noremap <expr> k (v:count == 0 ? 'gk' : 'k')
-]]
+map('n', 'j', '<Plug>(accelerated_jk_gj)', opt)
+map('n', 'k', '<Plug>(accelerated_jk_gk)', opt)
+-- vim.cmd[[
+-- noremap <expr> j (v:count == 0 ? 'gj' : 'j')
+-- noremap <expr> k (v:count == 0 ? 'gk' : 'k')
+-- ]]
