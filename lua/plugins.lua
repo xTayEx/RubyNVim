@@ -153,10 +153,12 @@ return require("packer").startup({
 			requires = "nvim-lua/plenary.nvim",
 		})
 		use({
-			"michaelb/sniprun",
-			run = "bash ./install.sh",
-			requires = "rcarriga/nvim-notify",
-			branch = "dev",
+			"phaazon/hop.nvim",
+			branch = "v2", -- optional but strongly recommended
+			config = function()
+				-- you can configure Hop the way you like here; see :h hop-config
+				require("hop").setup({ keys = "etovxqpdygfblzhckisuran" })
+			end,
 		})
 		use({
 			"iamcco/markdown-preview.nvim",
