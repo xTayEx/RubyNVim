@@ -148,6 +148,7 @@ return require("packer").startup({
 			},
 		})
 		use({ "gelguy/wilder.nvim" })
+		use({ "kevinhwang91/nvim-bqf", ft = "qf" })
 		use({
 			"sindrets/diffview.nvim",
 			requires = "nvim-lua/plenary.nvim",
@@ -234,6 +235,7 @@ return require("packer").startup({
 		use({
 			"nvim-colortils/colortils.nvim",
 			cmd = "Colortils",
+			branch = "main",
 			config = function()
 				require("colortils").setup()
 			end,
