@@ -274,6 +274,8 @@ return require("packer").startup({
 				require("dressing").setup()
 			end,
 		})
+		-- games or plugins for fun
+		use({ "eandrju/cellular-automaton.nvim" })
 		-- luarock
 		use({ "romgrk/fzy-lua-native" })
 	end,
